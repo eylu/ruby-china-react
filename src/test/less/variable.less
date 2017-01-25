@@ -1,0 +1,56 @@
+////////////////////////////////// 普通使用 ////////////////////////////////
+@link-color:        #428bca; // sea blue
+@link-color-hover:  darken(@link-color, 10%);
+a,
+.link {
+  color: @link-color;
+}
+a:hover {
+  color: @link-color-hover;
+}
+.widget {
+  color: #fff;
+  background: @link-color;
+}
+
+/////////////////////////////////// Selectors 做为选择器使用 //////////////////
+@my-selector: banner;
+.@{my-selector} {
+  font-weight: bold;
+  line-height: 40px;
+  margin: 0 auto;
+}
+
+////////////////////////////////// URLs 做为路径使用 /////////////////////////
+@images: "../img";
+body {
+  color: #444;
+  //background: url("@{images}/white-sand.png"); // 需要有图片，否则报错
+}
+
+////////////////////////////////// Import Statements 导入 ///////////////////
+// @themes: "../../src/themes";
+// @import "@{themes}/tidal-wave.less";
+
+////////////////////////////////// Properties 做为属性使用 ///////////////////
+@property: color;
+
+.widget {
+  @{property}: #0ee;
+  background-@{property}: #999;
+}
+
+////////////////////////////////// Variable Names /////////////////////////
+@fnord:  "I am fnord.";
+@var:    "fnord";
+.text{
+    content: @@var;
+}
+
+////////////////////////////////// Lazy Loading 支持延迟加载 ////////////////
+.lazy-eval {
+  width: @a;
+}
+@a: 9%;
+
+

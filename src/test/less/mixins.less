@@ -1,0 +1,44 @@
+
+//////////////////////////////// Mixins 混入 /////////////////////////////////////
+.a, #b {
+  color: red;
+}
+.mixin-class {
+  .a;
+}
+.mixin-id {
+  #b();
+}
+
+/////////////////////////////// Not Outputting the Mixin ///////////////////////
+.my-mixin {
+  color: black;
+}
+.my-other-mixin() {
+  background: white;
+}
+.class {
+  .my-mixin;
+  .my-other-mixin;
+}
+
+/////////////////////////////// Selectors in Mixins 选择器混入 ///////////////////
+.my-hover-mixin() {
+  &:hover {
+    border: 1px solid red;
+  }
+}
+button {
+  .my-hover-mixin();
+}
+
+/////////////////////////////// NameSpace 命名空间 ///////////////////////////////
+#outer {
+  .inner {
+    color: black;
+  }
+}
+
+.c {
+  #outer > .inner;
+}

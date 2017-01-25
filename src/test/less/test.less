@@ -1,0 +1,127 @@
+// Importing
+@import "core"; // core.less
+@import "core.css";
+
+// Variables 变量
+@nice-blue: #555555;
+@light-blue: @nice-blue + #121212;
+
+#header {
+  color: @light-blue;
+}
+
+// Mixins 混入
+.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px blue;
+}
+
+#menu a {
+  color: #111;
+  .bordered;
+}
+
+.post a {
+  color: red;
+  .bordered;
+}
+
+// Nested Rules 嵌套
+// 示例1
+#header {
+  color: black;
+  .navigation {
+    font-size: 12px;
+  }
+  .logo {
+    width: 300px;
+  }
+}
+// 示例2
+.clearfix {
+  display: block;
+  zoom: 1;
+
+  &:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+// Nested Directives and Bubbling 指令嵌套和冒泡
+.screen-color {
+  @media screen {
+    color: green;
+    @media (min-width: 768px) {
+      color: red;
+    }
+  }
+  @media tv {
+    color: black;
+  }
+}
+// Operations 操作 （+ - * / % ...）
+// numbers are converted into the same units
+@conversion-1: 5cm + 10mm; // result is 6cm
+@conversion-2: 2 - 3cm - 5mm; // result is 1.5cm
+.test1{
+    width: @conversion-2;
+}
+
+// conversion is impossible
+@incompatible-units: 2 + 5px - 3cm; // result is 4px
+.test2{
+    width: @incompatible-units;
+}
+// example with variables
+@base: 5%;
+@filler: @base * 2; // result is 10%
+@other: @base + @filler; // result is 15%
+
+@color: #224488 / 2;
+.test6{
+    color: @color;
+}
+
+// Functions 函数
+@base: #f04615;
+@width: 0.5;
+
+.class {
+  width: percentage(@width); // returns `50%`
+  color: saturate(@base, 5%);
+  background-color: spin(lighten(@base, 25%), 8);
+}
+
+// Namespaces and Accessors
+#bundle {
+  .button {
+    display: block;
+    border: 1px solid black;
+    background-color: grey;
+    &:hover {
+      background-color: white
+    }
+  }
+  .tab {  }
+  .citation {  }
+}
+#header a {
+  color: orange;
+  #bundle > .button;
+}
+
+// Scope
+@var: red;
+
+#page {
+  #header {
+    color: @var; // white
+
+  }
+  @var: white;
+}
+

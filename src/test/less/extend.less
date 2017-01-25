@@ -1,0 +1,26 @@
+///////////////////////////// Extend  扩展 ////////////////////////////
+nav ul {
+  &:extend(.inline);
+  background: blue;
+}
+.inline {
+  color: red;
+}
+
+///////////////////////////// Syntax 语法 /////////////////////////////
+.a:extend(.b) {
+    color: red;
+}
+.b{
+    width: 100px;
+}
+
+///////////////////////////// Nested Selectors 嵌套选择器 /////////////
+.bucket {
+  tr { // nested ruleset with target selector
+    color: blue;
+  }
+}
+.some-class:extend(.bucket tr) {
+    width: 100px;
+}
