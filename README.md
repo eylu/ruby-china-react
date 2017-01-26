@@ -79,7 +79,7 @@ A frontend project for RubyChina use Reactjs
 
     webpack-dev-server  // 与配置2 对应
 
-4、访问
+5、访问
 
     http://localhost:8080/
 
