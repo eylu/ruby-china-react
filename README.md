@@ -89,9 +89,9 @@ A frontend project for RubyChina use Reactjs
 
 ========================= Less 使用 ============================
 
-npm install --save-dev less-loader less
+    npm install --save-dev less-loader less
 
-module: {
+    module: {
         loaders: [{
             test: /\.js$/,
             exclude: /node_modules/,
@@ -106,4 +106,5 @@ module: {
             test: /\.less$/,
             loader: 'style!css!less'
         }]
+    }
 
