@@ -4,7 +4,8 @@ import {
 import {
     INIT_NODE_LIST,
     GET_TOPIC_LIST,
-    TOPIC_LOADING_STATUS
+    TOPIC_LOADING_STATUS,
+    SET_TOPIC_TYPE
 } from '../actions/index';
 
 import {
@@ -40,10 +41,20 @@ function topicLoading(state = true, action){
     }
 }
 
+function setTopicType(state = 'last_actived', action){
+    switch (action.type) {
+        case SET_TOPIC_TYPE:
+            return action.data;
+        default:
+            return state;
+    }
+}
+
 const reducers = combineReducers({
     nodes: nodeList,
     topics: topicList,
-    topicLoading: topicLoading
+    topicLoading: topicLoading,
+    topicType: setTopicType
 });
 
 export default reducers;

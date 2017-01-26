@@ -6,6 +6,8 @@ import {
 } from 'react-router';
 
 import Layout from 'antd/lib/layout';
+import Icon from 'antd/lib/icon';
+import Tooltip from 'antd/lib/tooltip';
 
 import { parseTime, timeDiffCounter } from '../utils/date.tool';
 import EmptyComponent from './empty.component';
@@ -40,6 +42,9 @@ export default class TopicComponent extends Component {
                                         <div className="home-topic-item-name">
                                             <Link to="" className="node">{topic.node_name}</Link>
                                             <Link to="" className="txt">{topic.title}</Link>
+                                            <span>
+                                                {topic.excellent ? <Tooltip title="精华文章"><Icon type="like" className="icon-popular-tip" /></Tooltip> : '' }
+                                            </span>
                                         </div>
                                         <div className="home-topic-item-info color-gray">
                                             <Link to="#" className="link-gray link-underline">{topic.user.name}</Link>

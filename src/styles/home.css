@@ -98,6 +98,8 @@
 .home-topic-item-name {
     padding: 5px 0 0;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .home-topic-item-name .node {
@@ -128,6 +130,12 @@
 
 .home-topic-item .count-tip a:hover {
     background: #A9BBDC;
+}
+
+.home-topic-item .icon-popular-tip{
+    margin-left: 5px;
+    font-size: 1.2em;
+    color: red;
 }
 
 .home-topics .panel-body{

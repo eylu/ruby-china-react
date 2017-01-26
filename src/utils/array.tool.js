@@ -1,12 +1,4 @@
 
-export function topicGroup(data){
-    let result = [];
-    let count =  data.length;
-    return [
-        data.splice(0, count/2),
-        data
-    ]
-}
 /**
  * 将首页的节点数据分组
  * @param  {Array} data  数据列表     [{section_id:1, section_name:'ruby', id:1, name:'新手问题'}, ...]

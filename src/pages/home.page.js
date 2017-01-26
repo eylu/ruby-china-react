@@ -34,7 +34,6 @@ class HomePage extends Component {
         let { dispatch } = this.props;
         dispatch(initNodeList());
         dispatch(getTopicList({type: 'popular'}));
-        dispatch(setTopicLoadingStatus(false))
     }
 
     render() {
@@ -104,7 +103,7 @@ class HomePage extends Component {
                         <Col span={6}>
                             <div className="home-icons-box item4">
                                 <Link to="/topics/popular">
-                                    <div className="icon-wrapper"><Icon type="bulb" /></div>
+                                    <div className="icon-wrapper"><Icon type="like-o" /></div>
                                 </Link>
                                 <div className="text-wrapper">
                                     <Link to="/topics/popular" className="clearfix">
@@ -124,7 +123,7 @@ class HomePage extends Component {
                         <HomeTopicComponent topicList={this.props.topicList} topicLoading={this.props.topicLoading} />
                     </div>
                     <div className="panel-foot">
-                        <Link to="">查看更多社区精华帖...</Link>
+                        <Link to="topics">查看更多社区精华帖...</Link>
                     </div>
                 </div>
                 <div className="home-nodes panel hidden-xs">

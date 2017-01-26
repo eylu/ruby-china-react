@@ -214,6 +214,14 @@ a.link-underline:hover {
     border-bottom-style: dotted !important;
 }
 
+@media (max-width: 767px) {
+
+    .subnav-wrapper .ant-menu-item {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}
 
 /** 左右适应布局 */
 
@@ -235,7 +243,7 @@ a.link-underline:hover {
     .auto-layout .sidebar {
         float: none;
         width: 100%;
-        padding: 0 15px;
+        padding: 0 15px 15px;
     }
 }
 

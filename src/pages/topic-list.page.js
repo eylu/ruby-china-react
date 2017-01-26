@@ -12,7 +12,7 @@ import Icon from 'antd/lib/icon';
 import Pagination from 'antd/lib/pagination';
 
 import { rubyResourceList, friendList } from '../config/const';
-import { getTopicList, setTopicLoadingStatus } from '../actions/index';
+import { getTopicList, setTopicLoadingStatus, setTopicType } from '../actions/index';
 import TopicComponent from '../components/topic.component';
 import EmptyComponent from '../components/empty.component';
 
@@ -25,19 +25,27 @@ class TopicListPage extends Component {
         };
 
         this.onPaginationChange = this.onPaginationChange.bind(this);
+        this.subNavClick = this.subNavClick.bind(this);
     }
 
     componentDidMount(){
         let { dispatch } = this.props;
-        dispatch(getTopicList({type: 'popular'}));
-        dispatch(setTopicLoadingStatus(false))
+        dispatch(getTopicList({type: this.props.topicType}));
+
     }
 
-    handleClick(subnav){
-
+    subNavClick(subnav){
+        let { dispatch } = this.props;
+        dispatch(setTopicType(subnav.key));
+        dispatch(getTopicList({type: subnav.key}));
+        this.setState({
+            currentPage: 1
+        });
     }
 
     onPaginationChange(page){
+        let { dispatch } = this.props;
+        dispatch(getTopicList({type: this.props.topicType, offset: (page-1)*20}));
         this.setState({
             currentPage: page
         });
@@ -45,22 +53,27 @@ class TopicListPage extends Component {
 
     render() {
         let content = <EmptyComponent title="正在加载数据..." />;
-        if(this.props.topicList.length){
-            content = <TopicComponent topicList={this.props.topicList} />;
+        if(!this.props.topicLoading){
+            if(this.props.topicList.length){
+                content = <TopicComponent topicList={this.props.topicList} />;
+            }else{
+                content = <EmptyComponent title="数据为空!!!" />;
+            }
         }
+
         return (
             <div>
                 <div className="subnav-wrapper">
                     <div className="container clearfix">
-                        <div className="btn-all-nodes l">
+                        <div className="btn-all-nodes l hidden-xs">
                             <span>所有节点</span>
                             <Icon type="caret-right" className="btn-icon" />
                         </div>
-                        <Menu className="l" mode="horizontal" onClick={this.handleClick}>
-                            <Menu.Item key="normal">默认</Menu.Item>
-                            <Menu.Item key="popular">优质帖子</Menu.Item>
-                            <Menu.Item>无人问津</Menu.Item>
-                            <Menu.Item>最新发布</Menu.Item>
+                        <Menu className="l" mode="horizontal" onClick={this.subNavClick}>
+                            <Menu.Item key="last_actived">默认</Menu.Item>
+                            <Menu.Item key="popular"><Icon type="like" />优质帖子</Menu.Item>
+                            <Menu.Item key="no_reply">无人问津</Menu.Item>
+                            <Menu.Item key="recent">最新发布</Menu.Item>
                         </Menu>
                     </div>
                 </div>
@@ -70,7 +83,7 @@ class TopicListPage extends Component {
                             <div className="topic-list-page panel">
                                 {content}
                                 <div className="panel-foot">
-                                    <Pagination current={this.state.currentPage} onChange={this.onPaginationChange} total={500} />
+                                    <Pagination current={this.state.currentPage} onChange={this.onPaginationChange} total={5000} />
                                 </div>
                             </div>
                         </div>
@@ -158,7 +171,8 @@ class TopicListPage extends Component {
 function mapStateToProps(state){
     return {
         topicLoading: state.topicLoading,
-        topicList: state.topics
+        topicList: state.topics,
+        topicType: state.topicType
     }
 }
 
