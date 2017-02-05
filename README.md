@@ -34,10 +34,30 @@ A frontend project for RubyChina use Reactjs
     npm run build  // 在当前目录下创建 build 目录，将里面的文件部署到服务器（Apache/nginx/tomcat/...）
 
 
+==== 知识点 ====
 
+项目依赖
 
+    react
+    react-router
+    redux
+    antd
+    react-markdown（将 markdown 解析成 html ）
 
-========================= Less 使用 ============================
+开发依赖
+
+    webpack
+    webpack-dev-server
+    webpack插件: extract-text-webpack-plugin（css单独打包）、html-webpack-plugin（模版）
+    loaders: css、json、babel及插件、url、less
+    babel-polyfill(垫片)
+
+==== 注意点 ====
+
+    dangerouslySetInnerHTML
+    // 将 html 字符串变量解析成 dom
+
+==== Less 使用 ====
 
     npm install --save-dev less-loader less
 
