@@ -218,10 +218,15 @@ a.link-underline:hover {
 }
 
 @media (max-width: 767px) {
-
+    .subnav-wrapper .ant-menu{
+        width: 100%;
+        display: block;
+    }
     .subnav-wrapper .ant-menu-item {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 0;
+        padding-right: 0;
+        width: 25%;
+        text-align: center;
     }
 
 }
