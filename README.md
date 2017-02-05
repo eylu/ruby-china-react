@@ -56,6 +56,8 @@ A frontend project for RubyChina use Reactjs
 
     dangerouslySetInnerHTML
     // 将 html 字符串变量解析成 dom
+    // 使用方式：
+    // <div dangerouslySetInnerHTML={{__html:'test<br />test'}}></div>
 
 ==== Less 使用 ====
 
