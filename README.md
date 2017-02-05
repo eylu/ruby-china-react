@@ -21,69 +21,17 @@ A frontend project for RubyChina use Reactjs
     npm install react-markdown --save // Markdown
     npm install json-loader --save-dev
 
-3、配置 webpack
 
+3、运行开发模式
 
-配置1
+    npm start
 
-    var path = require("path");
-    var webpack = require("webpack");
-    module.exports = {
-        entry: {
-            app: ["./src/main.js"]
-        },
-        output: {
-            path: path.resolve(__dirname, "build"),
-            // publicPath: "/assets/",
-            filename: "bundle.js"
-        },
-        module: {
-            loaders: [{
-                test: /\.css$/,
-                loader: 'style!css'
-            }]
-        }
-    };
-
-配置2
-
-    var path = require("path");
-    var webpack = require("webpack");
-    module.exports = {
-        entry: {
-            app: ["./src/main.js"]
-        },
-        output: {
-            path: path.resolve(__dirname, "build"),
-            // publicPath: "/assets/",
-            filename: "bundle.js"
-        },
-        module: {
-            loaders: [{
-                test: /\.css$/,
-                loader: 'style!css'
-            }]
-        },
-        plugins: [
-            new webpack.HotModuleReplacementPlugin()
-        ],
-        devServer: {
-            contentBase: 'build',
-            inline: true,
-            hot: true
-        }
-    };
-
-
-4、运行
-
-    webpack-dev-server --content-base build/ --hot --inline  // 与配置1 对应
-
-    webpack-dev-server  // 与配置2 对应
-
-5、访问
-
+    // 浏览器打开
     http://localhost:8080/
+
+4、打包产品模式
+
+    npm run build  // 在当前目录下创建 build 目录，将里面的文件部署到服务器（Apache/nginx/tomcat/...）
 
 
 
@@ -95,16 +43,6 @@ A frontend project for RubyChina use Reactjs
 
     module: {
         loaders: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel',
-            query: {
-                presets: ['es2015', 'react']        // babel 配置项中
-            }
-        },{
-            test: /\.css$/,
-            loader: 'style!css'
-        },{
             test: /\.less$/,
             loader: 'style!css!less'
         }]

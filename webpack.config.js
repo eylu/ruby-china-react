@@ -49,6 +49,5 @@ module.exports = {
         contentBase: 'build/',
         inline: true,
         hot: true,
-        host: '192.168.1.196',
     }
 };
