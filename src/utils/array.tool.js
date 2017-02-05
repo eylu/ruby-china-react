@@ -13,10 +13,7 @@ export function nodeGroup(data){
             group = {section_id:node.section_id,section_name:node.section_name,node_list:[]}
             result.push(group);
         }
-        group.node_list.push({
-            node_id: node.id,
-            node_name: node.name
-        })
+        group.node_list.push(node)
     }
     return result;
 }

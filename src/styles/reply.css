@@ -1,0 +1,21 @@
+.reply{
+    border-bottom: 1px solid #ddd;
+    padding: 15px 10px;
+}
+
+.reply-title{
+    padding-left: 10px;
+    color: #999;
+    font-size: 13px;
+}
+
+.reply .avatar-wrapper{
+    padding-top: 0;
+}
+.reply .markdown{
+    padding: 10px 10px 0 10px;
+}
+
+.reply .icon{
+    margin-right: 15px;
+}

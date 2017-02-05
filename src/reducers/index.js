@@ -5,7 +5,10 @@ import {
     INIT_NODE_LIST,
     GET_TOPIC_LIST,
     TOPIC_LOADING_STATUS,
-    SET_TOPIC_TYPE
+    SET_TOPIC_TYPE,
+    GET_TOPIC_DETAILS,
+    GET_TOPIC_REPLIES,
+    GET_NODE_DETAILS,
 } from '../actions/index';
 
 import {
@@ -32,6 +35,24 @@ function topicList(state = [], action) {
     }
 }
 
+function topicDetails(state = {}, action){
+    switch (action.type) {
+        case GET_TOPIC_DETAILS:
+            return action.data;
+        default:
+            return state;
+    }
+}
+
+function topicReplyList(state = {}, action){
+    switch (action.type){
+        case GET_TOPIC_REPLIES:
+            return action.data;
+        default:
+            return state;
+    }
+}
+
 function topicLoading(state = true, action){
     switch (action.type) {
         case TOPIC_LOADING_STATUS:
@@ -50,11 +71,23 @@ function setTopicType(state = 'last_actived', action){
     }
 }
 
+function nodeDetails(state = {}, action){
+    switch (action.type) {
+        case GET_NODE_DETAILS:
+            return action.data;
+        default:
+            return state;
+    }
+}
+
 const reducers = combineReducers({
     nodes: nodeList,
     topics: topicList,
     topicLoading: topicLoading,
-    topicType: setTopicType
+    topicType: setTopicType,
+    topicDetails: topicDetails,
+    topicReplies: topicReplyList,
+    nodeDetails: nodeDetails,
 });
 
 export default reducers;

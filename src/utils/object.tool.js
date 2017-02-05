@@ -17,7 +17,7 @@ export function parseParam (obj) {
                 fullSubName = name + '[' + i + ']';
                 innerObj = {};
                 innerObj[fullSubName] = subValue;
-                query += param(innerObj) + '&';
+                query += parseParam(innerObj) + '&';
             }
         } else if (value instanceof Object) {
             for (subName in value) {
@@ -25,7 +25,7 @@ export function parseParam (obj) {
                 fullSubName = name + '[' + subName + ']';
                 innerObj = {};
                 innerObj[fullSubName] = subValue;
-                query += param(innerObj) + '&';
+                query += parseParam(innerObj) + '&';
             }
         } else if (value !== undefined && value !== null)
             query += encodeURIComponent(name) + '=' + encodeURIComponent(value) + '&';
@@ -34,3 +34,7 @@ export function parseParam (obj) {
     // console.log('++++++>',result);
     return result;
 };
+
+export function translateHtml(str){
+    return str.replace(/\r\n/g, "<br />");
+}

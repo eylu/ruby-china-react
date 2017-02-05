@@ -41,7 +41,7 @@ export default class TopicComponent extends Component {
                                     <Content className="home-topic-content">
                                         <div className="home-topic-item-name">
                                             <Link to="" className="node">{topic.node_name}</Link>
-                                            <Link to="" className="txt">{topic.title}</Link>
+                                            <Link to={`topics/${topic.id}`} className="txt">{topic.title}</Link>
                                             <span>
                                                 {topic.excellent ? <Tooltip title="精华文章"><Icon type="like" className="icon-popular-tip" /></Tooltip> : '' }
                                             </span>

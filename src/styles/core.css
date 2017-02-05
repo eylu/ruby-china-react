@@ -40,6 +40,9 @@ a.link-gray {
 a.link-gray:hover {
     color: #333;
 }
+a.link-green{
+    color: #7AA87A;
+}
 
 a.link-underline:hover {
     text-decoration: underline;
@@ -321,6 +324,16 @@ a.link-underline:hover {
     border-bottom-right-radius: 3px;
 }
 
+/** 头像 **/
+.avatar-wrapper{
+    padding-top: 10px;
+    text-align: center;
+}
+.avatar{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
 
 /** media */
 

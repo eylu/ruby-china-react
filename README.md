@@ -18,6 +18,8 @@ A frontend project for RubyChina use Reactjs
     npm install extract-text-webpack-plugin --save-dev  // css单独打包
     npm install react-blocks --save // Flex块显示
     npm install url-loader --save-dev
+    npm install react-markdown --save // Markdown
+    npm install json-loader --save-dev
 
 3、配置 webpack
 

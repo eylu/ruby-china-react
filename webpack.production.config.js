@@ -26,11 +26,14 @@ module.exports = {
             loader: ExtractTextPlugin.extract('style', 'css')
         }, {
             test: /\.less$/,
-            loader: 'style!css?modules',
-            include: /src\/test/
+            loader: 'style!css?modules!less',
+            include: /src/
         }, {
             test: /\.(png|jpg|svg)$/,
             loader: 'url-loader?limit=2048000&name=images-[hash:8].[name].[ext]'
+        },{
+            test: /\.json$/,
+            loader: 'json'
         }]
     },
     plugins: [

@@ -1,0 +1,32 @@
+.empty-page{
+    background: #fff;
+    margin-top: 15px;
+}
+
+.empty-wrapper{
+    width: 440px;
+    margin: 0 auto;
+    padding: 25px 0;
+}
+
+
+.empty-wrapper i,
+.empty-wrapper .icon{
+    font-size: 36px;
+    color: #4381f3;
+    margin-right: 20px;
+}
+
+.empty-wrapper .tip{
+    line-height: 36px;
+    font-size: 20px;
+    color: #4381f3;
+}
+
+@media (max-width: 767px){
+    .empty-wrapper{
+        width: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

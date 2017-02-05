@@ -2,8 +2,8 @@ export const navList = [
     {title: '社区', link: '/topics'},
     {title: 'Wiki', link: '/wiki'},
     {title: '酷站', link: '/sites'},
-    {title: 'Homeland', link: '/topics/node23'},
-    {title: '招聘', link: '/jobs'},
+    {title: 'Homeland', link: '/topics/node/23'},
+    {title: '招聘', link: '/topics/node/25'},
     {title: 'Gems', url: 'https://gems.ruby-china.org/'},
 ];
 

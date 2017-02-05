@@ -1,0 +1,17 @@
+.node-page{
+
+}
+
+.node-page .title{
+    padding: 15px;
+}
+
+.node-page .title span.txt{
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.node-page .summary{
+    padding: 0 15px 5px;
+    line-height: 2em;
+}

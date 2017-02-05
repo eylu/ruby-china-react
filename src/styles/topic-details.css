@@ -1,0 +1,22 @@
+.topic-details-page{
+    background: #fff;
+    margin-top: 15px;
+}
+.topic-details-title{
+    font-size: 22px;
+    padding: 10px 0;
+}
+
+.topic-details-title span{
+    color: #333;
+    margin-left: 10px;
+}
+
+
+.topic-details-popular-tip{
+    background: #fcf8f7;
+    padding: 5px 15px;
+    font-size: 13px;
+    color: #eb5424;
+    border-bottom: 1px solid #f3f0f0;
+}

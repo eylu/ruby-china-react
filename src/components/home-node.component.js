@@ -30,7 +30,7 @@ export default class HomeNodeComponent extends Component {
                         group.node_list.map((node, j)=>{
                             return (
                                 <span className="home-node-link" key={j}>
-                                    <Link to="" className="link-underline">{node.node_name}</Link>
+                                    <Link to={`/topics/node/${node.id}`} className="link-underline">{node.name}</Link>
                                 </span>
                             )
                         })

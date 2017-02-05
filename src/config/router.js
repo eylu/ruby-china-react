@@ -21,6 +21,9 @@ import Tooltip from 'antd/lib/tooltip';
 import { navList } from './const';
 import HomePage from '../pages/home.page';
 import TopicListPage from '../pages/topic-list.page';
+import TopicDetailsPage from '../pages/topic-details.page';
+import NodePage from '../pages/node.page';
+import EmptyPage from '../pages/empty.page';
 import imgLogoFooter from '../images/logo_footer.png';
 
 const {
@@ -66,8 +69,8 @@ class App extends Component {
                                   />
                             </Sider>
                             <Sider width="90" className="header-right header-user">
-                                <Link to="/singup"> 登录 </Link>
-                                <Link to="/singin"> 注册 </Link>
+                                <Link to="/singin"> 登录 </Link>
+                                <Link to="/singup"> 注册 </Link>
                             </Sider>
                         </Layout>
                     </div>
@@ -145,6 +148,13 @@ export default class RouterPage extends Component {
                 <Route path="/" component={App}>
                     <IndexRoute component={HomePage} />
                     <Route path="topics" component={TopicListPage} />
+                    <Route path="topics/:id" component={TopicDetailsPage} />
+                    <Route path="topics/node/:id" component={NodePage} />
+                    <Route path="wiki" component={EmptyPage} />
+                    <Route path="sites" component={EmptyPage} />
+                    <Route path="singin" component={EmptyPage} />
+                    <Route path="singup" component={EmptyPage} />
+
                 </Route>
             </Router>
         );
