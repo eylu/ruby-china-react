@@ -89,11 +89,11 @@ class HomePage extends Component {
                         </Col>
                         <Col span={6}>
                             <div className="home-icons-box item3">
-                                <Link to="/jobs">
+                                <Link to="/topics/node/25">
                                     <div className="icon-wrapper"><Icon type="team" /></div>
                                 </Link>
                                 <div className="text-wrapper">
-                                    <Link to="/jobs" className="clearfix">
+                                    <Link to="/topics/node/25" className="clearfix">
                                         <span className="l">招聘与求职</span>
                                         <Icon type="arrow-right" className="r" />
                                     </Link>

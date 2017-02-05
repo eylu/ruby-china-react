@@ -75,13 +75,13 @@ export default class SiderBarComponent extends Component {
                     <div>
                         <ul>
                             <li>
-                                社区会员: 30241 人
+                                社区会员: -- 人
                             </li>
                             <li>
-                                帖子数: 32165 个
+                                帖子数: -- 个
                             </li>
                             <li>
-                                回帖数: 314024 条
+                                回帖数: -- 条
                             </li>
                          </ul>
                     </div>

@@ -148,13 +148,10 @@ export default class RouterPage extends Component {
                 <Route path="/" component={App}>
                     <IndexRoute component={HomePage} />
                     <Route path="topics" component={TopicListPage} />
+                    <Route path="topics/popular" component={TopicListPage} />
                     <Route path="topics/:id" component={TopicDetailsPage} />
                     <Route path="topics/node/:id" component={NodePage} />
-                    <Route path="wiki" component={EmptyPage} />
-                    <Route path="sites" component={EmptyPage} />
-                    <Route path="singin" component={EmptyPage} />
-                    <Route path="singup" component={EmptyPage} />
-
+                    <Route path="*" component={EmptyPage} />
                 </Route>
             </Router>
         );
