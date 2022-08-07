@@ -49,5 +49,5 @@ module.exports = {
         contentBase: 'build/',
         inline: true,
         hot: true,
-    }
+    },
 };
